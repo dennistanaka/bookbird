@@ -1,0 +1,16 @@
+<div class="row top_buffer_10">
+	<div class="col-md-5">
+		<%= render 'profile_info', user: @user %>
+		<% if current_user == @user %>
+			<%= render 'posts/post_form', post: @post %>
+		<% end %>
+	</div>
+	<div class="col-md-7">
+		<%= render 'profile_nav', user: @user, tab: 'favorites' %>
+		<% if @user.favorites.empty? %>
+			<p>まだお気に入りされた投稿はありません。</p>
+		<% else %>
+		  <%= render 'layouts/post_list', posts: @favorite_posts %>
+		<% end %>
+	</div>
+</div>

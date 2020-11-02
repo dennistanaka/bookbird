@@ -1,0 +1,13 @@
+<%= form_for(@user) do |f| %>
+	<div class="form-group">
+		<%= f.label :email, "#{t('.mail')}" %>
+		<%= f.email_field :email %>
+	</div>>
+	<div class="form-group">
+		<%= f.label :locked, "#{t('.locked')}" %>
+		<%= f.check_box :locked, {}, 'true', 'false' %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

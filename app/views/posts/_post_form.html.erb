@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><strong><%= t('.new') %></strong></div>
+  <div class="panel-body">
+		<%= form_for post do |f| %>
+			<% if post.errors.any? %>
+		    <div class="panel panel-danger">
+		    	<div class="panel-heading"><strong><%= pluralize(post.errors.count, "error") %> prevented this post from being saved:</strong></div>
+		      <ul class='top-buffer-10'>
+		      <% post.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		  <div class="field form-group">
+				<%= f.label :book_cover, "#{t('.cover')}" %>
+				<%= f.file_field :book_cover %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :book_title, "#{t('.title')}" %>
+				<%= f.text_field :book_title, :class => "form-control" %>
+			</div>
+			<div class="field form-group">
+				<%= f.label :review, "#{t('.review')}" %>
+				<%= f.text_area :review, :class => "form-control post_form_review" %>
+			</div>
+			<div class="actions text-right bookbird_button">
+				<%= f.submit :class => "btn btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+</div>

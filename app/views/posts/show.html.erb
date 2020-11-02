@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<div class="panel panel-default top_buffer_54">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><%= t('.post') %></h3>
+		  </div>
+		  <div class="panel-body">
+		    <p>
+			  	<strong>Book title:</strong>
+				  <%= @post.book_title %>
+				</p>
+
+				<p>
+				  <strong>Review:</strong>
+				  <%= @post.review %>
+				</p>
+		  </div>
+
+		  <%= form_for([@post,Comment.new]) do |f| %>
+			  <div>
+			    <%= f.label :body %>
+			    <%= f.text_area :body %>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit%>
+			  </div>
+			<% end %>
+
+			<% @comments.each do |comment| %>
+		    <%= comment.user.email %>
+		    <%= comment.body %>
+		    <%= link_to 'Destroy', post_comments_path(comment.post), method: :delete, data: { confirm: '本当に消しますか？' } %>
+		  <% end %>
+
+		</div>
+
+		<% if current_user.id == @post.user_id %>
+			<%= link_to "#{t('.edit')}", edit_post_path(@post), :class => "btn btn-default" %> |
+			<%= link_to "#{t('.delete')}", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %> |
+		<% end %>
+		<%= link_to "#{t('.back')}", posts_path, :class => "btn btn-default" %>
+
+	</div>
+</div>
+

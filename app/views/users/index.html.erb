@@ -1,0 +1,9 @@
+<% @rows.each do |row| %>
+	<div class="row top_buffer_15">
+		<% row.each do |user| %>
+			<div class="col-md-4">
+				<%= render 'user_card', user: user %>
+			</div>
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,5 @@
+<% @requests.each do |user| %>
+  <p><%= user.email %></p>
+  <%= link_to '許可', accept_user_relationships_path(current_user.id, current_user.requested_relationships.find_by(following_id: user.id).id), method: :post %>
+  <%= link_to '拒否', user_relationships_path(current_user.id, current_user.requested_relationships.find_by(following_id: user.id).id), method: :delete %>
+<% end %>

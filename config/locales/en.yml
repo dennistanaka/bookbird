@@ -1,0 +1,138 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  favorites:
+    favorite:
+      like: "Like"
+  layouts:
+    post_list:
+      posted: "posted a book review"
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      short_date: "%b %d %H:%M"
+      now: "Now"
+      one_minute: "1 min"
+      minutes: " mins"
+      one_hour: "1h"
+      hours: " hrs"
+    application:
+      home: "Home"
+      people: "People"
+      profile: "My Profile"
+      log_in: "Log In"
+      log_out: "Log Out"
+      sign_up: "Sign Up"
+      about: "About"
+  pages:
+    about:
+    main:
+      welcome: "Welcome to the Social Network for<br />people who love books!"
+  posts:
+    index:
+      
+    post_form:
+      new: "New Post"
+      cover: "Book Cover"
+      title: "Book Title"
+      review: "Review"
+    edit:
+      show: "Show"
+      back: "Back"
+    new:
+
+    show:
+      post: "Post"
+      edit: "Edit"
+      delete: "Delete"
+      back: "Back"
+  users:
+    profile_info:
+
+    profile_nav:
+      posts: "All Posts"
+      favorites: "Favorites"
+      following: "Following"
+      followers: "Followers"
+    user_card:
+      follow: "Follow"
+    favorites:
+      
+    followers:
+
+    following:
+
+    index:
+
+    show:
+
+    edit:
+      mail: "Email"
+      locked: "鍵アカウントにしますか？"
+  devise:
+    sessions:
+      new:
+        log_in: "Log In"
+        mail: "Email"
+        password: "Password"
+        remember: "Remember Me"
+    registrations:
+      new:
+        sign_up: "Sign up"
+        mail: "Email"
+        password: "Password"
+        minimum: "characters minimum"
+        confirmation: "Password Confirmation"
+      edit:
+        settings: "Account Settings"
+        name: "Name"
+        profile: "Profile Picture"
+        city: "City"
+        country: "Country"
+        about: "About"
+        mail: "Email"
+        password: "Password"
+        confirmation: "Password Confirmation"
+        current: "Current Password"
+        update: "Update"
+        unhappy: "Unhappy?"
+        cancel: "Cancel my Account"
+        back: "Back"
+        locked: "鍵アカウントにしますか？"
+    shared:
+      links:
+        log_in: "Log In"
+        sign_up: "Sign Up"
+        forgot: "Forgot your password?"
+        no_confirmation: "Didn't receive confirmation instructions?"
+        no_unlock: "Didn't receive unlock instructions?"
+        sign_with: "Sign In with"

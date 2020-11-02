@@ -1,0 +1,45 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_hr {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.post_author_info {
+	margin-left: 51px;
+}
+
+.post_author_info small a:link {
+	color: #25859b;
+}
+
+.post_author_info small a:visited {
+	color: #25859b;
+}
+
+.post_author_info small a:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #4fcbe8;
+}
+
+.post_body {
+	margin-left: 99px;
+}
+
+.post_body a:link {
+	color: #25859b;
+}
+
+.post_body a:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #4fcbe8;
+}
+
+.post_body a:visited {
+	color: #25859b;
+}
+

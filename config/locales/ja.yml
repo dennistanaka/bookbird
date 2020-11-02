@@ -1,0 +1,138 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+  favorites:
+    favorite:
+      like: "いいね"
+  layouts:
+    post_list:
+      posted: "が本のレビューを投稿しました"
+      show: "表示"
+      edit: "編集"
+      delete: "削除"
+      short_date: "%-m月%-d日 %H:%M"
+      now: "今"
+      one_minute: "１分前"
+      minutes: "分前"
+      one_hour: "１時間前"
+      hours: "時間前"
+    application:
+      home: "ホーム"
+      people: "ユーザー"
+      profile: "プロフィール"
+      log_in: "ログイン"
+      log_out: "ログアウト"
+      sign_up: "新規登録"
+      about: "bookbirdについて"
+  pages:
+    about:
+    main:
+      welcome: "本を愛する人のためのSNSへようこそ！"
+  posts:
+    index:
+      
+    post_form:
+      new: "bookbirdに投稿"
+      cover: "カバー"
+      title: "タイトル"
+      review: "レビュー"
+    edit:
+      show: "表示"
+      back: "戻る"
+    new:
+
+    show:
+      post: "投稿"
+      edit: "編集"
+      delete: "削除"
+      back: "戻る"
+  users:
+    profile_info:
+
+    profile_nav:
+      posts: "投稿一覧"
+      favorites: "お気に入り"
+      following: "フォロー"
+      followers: "フォロワー"
+    user_card:
+      follow: "フォロー"
+    favorites:
+
+    followers:
+
+    following:
+
+    index:
+
+    show:
+
+    edit:
+      mail: "Email"
+      locked: "鍵アカウントにしますか？"
+  devise:
+    sessions:
+      new:
+        log_in: "ログイン"
+        mail: "メール"
+        password: "パスワード"
+        remember: "ログインを記憶"
+    registrations:
+      new:
+        sign_up: "新規登録"
+        mail: "メール"
+        password: "パスワード"
+        minimum: "最低文字数"
+        confirmation: "パスワード確認"
+      edit:
+        settings: "アカウント設定"
+        name: "名前"
+        profile: "プロフィール写真"
+        city: "居住地"
+        country: "居住地国"
+        about: "自己紹介"
+        mail: "メール"
+        password: "パスワード"
+        confirmation: "パスワード確認"
+        current: "現在のパスワード"
+        update: "更新する"
+        unhappy: "不満ですか？"
+        cancel: "アカウントの削除"
+        back: "戻る"
+        locked: "鍵アカウントにしますか？"
+    shared:
+      links:
+        log_in: "ログイン"
+        sign_up: "新規登録"
+        forgot: "パスワードを忘れた場合はこちら"
+        no_confirmation: "確認の説明が届いていない？"
+        no_unlock: "解除の説明が届いていない？"
+        sign_with: "ログインは"

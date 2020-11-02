@@ -1,0 +1,19 @@
+<div class="row top_buffer_10">
+	<% if accepted_user?(@user) %>
+		<div class="col-md-5">
+			<%= render 'profile_info', user: @user %>
+			<% if current_user == @user %>
+				<%= render 'posts/post_form', post: @post %>
+			<% end %>
+		</div>
+		<div class="col-md-7">
+			<%= render 'profile_nav', user: @user, tab: 'show' %>
+		  <%= render 'layouts/post_list', posts: @posts %>
+		  <%= paginate @posts %>
+		</div>
+	<% else %>
+		<div class="col-md-12">
+			<p>このユーザーのアカウントは閲覧することができません</p>
+		</div>
+	<% end %>
+</div>

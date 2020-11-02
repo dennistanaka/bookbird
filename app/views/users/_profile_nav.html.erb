@@ -1,0 +1,53 @@
+<div class="row bottom_buffer_10">
+	<div class="col-md-12">
+		<ul id="profile_tabs" class="nav nav-tabs">
+			<% if tab == 'show' %>
+			  <li role="presentation" class="active">
+			<% else %>
+				<li role="presentation">
+			<% end %>
+		  	<%= link_to user_path(user) do %>
+				<%= t('.posts') %> <span class="badge"><%= user.posts.count %></span>
+			<% end %>
+		  </li>
+		  <% if tab == 'favorites' %>
+			  <li role="presentation" class="active">
+			<% else %>
+				<li role="presentation">
+			<% end %>
+		  	<%= link_to favorites_user_path(user) do %>
+					<%= t('.favorites') %> <span class="badge"><%= user.favorites.count %></span>
+				<% end %>
+		  </li>
+		  <% if user.locked? && user == current_user %>
+			  <% if tab == 'requests' %>
+				  <li role="presentation" class="active">
+				<% else %>
+					<li role="presentation">
+				<% end %>
+			  	<%= link_to requests_user_path(user) do %>
+					フォロー申請 <span class="badge"><%= user.requests.count %></span>
+				<% end %>
+			  </li>
+		  <% end %>
+		  <% if tab == 'following' %>
+			  <li role="presentation" class="active">
+			<% else %>
+				<li role="presentation">
+			<% end %>
+		  	<%= link_to following_user_path(user) do %>
+					<%= t('.following') %> <span class="badge"><%= user.following.count %></span>
+				<% end %>
+		  </li>
+		  <% if tab == 'followers' %>
+			  <li role="presentation" class="active">
+			<% else %>
+				<li role="presentation">
+			<% end %>
+		  	<%= link_to followers_user_path(user) do %>
+					<%= t('.followers') %> <span class="badge"><%= user.followers.count %></span>
+				<% end %>
+		  </li>
+		</ul>
+	</div>
+</div>

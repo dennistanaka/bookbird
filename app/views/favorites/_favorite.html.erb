@@ -1,0 +1,13 @@
+<% if post.favorited_by? current_user %>
+	<div class="post_unlike_button">
+	  <%= link_to post_favorites_path(post), method: :delete, remote: true, class: "btn btn-default" do %>
+	  	<i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= t('.like') %>
+	  <% end %>
+	</div>
+<% else %>
+	<div class="post_like_button">
+		<%= link_to post_favorites_path(post), method: :post, remote: true, class: "btn btn-default" do %>
+			<i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= t('.like') %>
+		<% end %>
+  </div>
+<% end %>

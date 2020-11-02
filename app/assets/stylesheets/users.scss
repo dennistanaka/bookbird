@@ -1,0 +1,51 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_info {
+	margin-left: 99px;
+}
+
+.user_info a:link {
+	color: #25859b;
+}
+
+.user_info a:visited {
+	color: #25859b;
+}
+
+.user_info a:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #4fcbe8;
+}
+
+.profile_info {
+	margin-left: 143px;
+}
+
+#profile_tabs a {
+	color: #25859b;
+}
+
+.devise_shared_links a:link {
+	color: #25859b;
+}
+
+.devise_shared_links a:visited {
+	color: #25859b;
+}
+
+.devise_shared_links a:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #4fcbe8;
+}
+
+.user_about {
+	min-height: 96px;
+}
+
+.user_card {
+	height: 150px;
+}

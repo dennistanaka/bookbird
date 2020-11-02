@@ -1,0 +1,53 @@
+<% posts.each do |post| %>
+  <div class="panel panel-default">
+    <div class="container-fluid top_buffer_15 bottom_buffer_15">
+      <div class="row">
+        <div class="col-md-12">
+          <% if post.user.profile_picture? %>
+          <%= image_tag(post.user.profile_picture.url, class: "element_float_left", width: "36") %>
+          <% else %>
+            <%= image_tag("portrait.png", class: "element_float_left", width: "36") %>
+          <% end %>
+          <% if current_user.id == post.user_id %>
+            <div class="btn-group-sm dropdown element_float_right">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu post_dropdown_menu">
+                <li><%= link_to "#{t('.show')}", post %></li>
+                <li><%= link_to "#{t('.edit')}", edit_post_path(post) %></li>
+                <li><%= link_to "#{t('.delete')}", post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              </ul>
+            </div>
+          <% end %>
+          <div class="post_author_info">
+            <small><%= link_to post.user.name, "" %> <%= t('.posted') %></small><br />
+            <small><%= date_diff_string post.updated_at %></small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 top_buffer_15">
+          <% if post.book_cover? %>
+            <%= link_to image_tag(post.book_cover.url, width: "84"), post, class: "element_float_left" %>
+          <% else %>
+            <%= link_to image_tag('noimage.svg', width: "84"), post, class: "element_float_left" %>
+          <% end %>
+          <div class="post_body">
+            <%= link_to post.book_title, post, class: "lead" %><br />
+            <small>by Book Author</small>
+            <p class="top_buffer_15"><%= post.review %></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr class="post_hr">
+          <div id="favorite-btn-<%= post.id %>">
+            <%= render 'favorites/favorite', post: post %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

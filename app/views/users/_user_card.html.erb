@@ -1,0 +1,54 @@
+<div class="panel panel-default user_card">
+  <div class="container-fluid top_buffer_15 bottom_buffer_15">
+    <div class="row">
+      <div class="col-md-12">
+      	<%= link_to user_path(user) do %>
+          <% if user.profile_picture? %>
+      		  <%= image_tag(user.profile_picture.url, height: "84", class: "element_float_left") %>
+          <% else %>
+            <%= image_tag("portrait.png", width: "84", class: "element_float_left") %>
+          <% end %>
+      	<% end %>
+      	<div class="user_info">
+          <%= link_to user.name, user_path(user) %><br />
+          <% if current_user != user %>            
+            <% if user.followed_by?(current_user) %>
+		          <div class="unfollow_button top_buffer_10">
+		          	<%= link_to user_relationships_path(user), method: :delete, class: "btn btn-default" do %>
+							  	<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= t('.follow') %>
+							  <% end %>
+							</div>
+            <% elsif user.requested_by?(current_user) %>
+              <div class="unrequest_button top_buffer_10">
+                <%= link_to user_relationships_path(user), method: :delete, class: "btn btn-default" do %>
+                  <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= "Request Sent" %>
+                <% end %>
+              </div>
+		        <% else %>
+              <% if user.locked? %>
+  		          <div class="request_button top_buffer_10">
+  		          	<%= link_to user_relationships_path(user), method: :post, class: "btn btn-default" do %>
+  									<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= "Request" %>
+  								<% end %>
+  						  </div>
+              <% else %>
+                <div class="follow_button top_buffer_10">
+                  <%= link_to user_relationships_path(user), method: :post, class: "btn btn-default" do %>
+                    <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<%= t('.follow') %>
+                  <% end %>
+                </div>
+              <% end %>
+		        <% end %>			      
+			    <% end %>
+				</div>
+      </div>
+    </div>
+    <div class="row top_buffer_15">
+    	<div class="col-md-12">
+        <%if user.city? && user.country? %>
+    		  <p><small><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= "#{user.city}, #{user.country}" %></small></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

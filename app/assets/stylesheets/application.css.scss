@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+	background-color: white;
+}
+
+body {
+	background-color: #d2eaea;
+}
+
+#bookbird_contents {
+	background-color: white;
+	margin: 0 auto;
+	min-height: 540px;
+}
+
+#bookbird_footer {
+	background-color: white;
+  border-width: 1px;
+  border-color: #f5f5f5;
+  padding: 15px 0;
+}
+
+#navigation_bar {
+	background-color: #4fcbe8;
+	margin-bottom: 0;
+}
+
+#navigation_bar a:link {
+	color: white;
+}
+
+#navigation_bar a:hover {
+	color: #777777;
+}
+
+#navigation_bar a:visited {
+	color: white;
+}
+
+.navigation_bar_image_links li a {
+	padding: 0;
+}
+
+.top_buffer_10 {
+	margin-top: 10px;
+}
+
+.top_buffer_15 {
+	margin-top: 15px;
+}
+
+.top_buffer_54 {
+	margin-top: 54px;
+}
+
+.bottom_buffer_10 {
+	margin-bottom: 10px;
+}
+
+.bottom_buffer_15 {
+	margin-bottom: 15px;
+}
+
+.element_float_left {
+	float: left;
+}
+
+.element_float_right {
+	float: right;
+}
+
+.bookbird_button input {
+	border: 0;
+	background-color: #25859b;
+}
+
+.bookbird_button input:hover {
+	border: 0;
+	background-color: #4fcbe8;
+}
+
+.post_dropdown_menu {
+  	font-size: 12px;
+}
+
+.locale_dropdown_menu ul li a:link {
+	color: black !important;
+}
+
+.locale_dropdown_menu ul li a:hover {
+	color: black !important;
+}
+
+.locale_dropdown_menu ul li a:visited {
+	color: black !important;
+}
+
+.locale_dropdown_menu button {
+	border-color: white;
+	background-color: #4FCBE8;
+	color: white;
+}
+
+.locale_dropdown_menu button:hover {
+	border-color: white;
+	background-color: #4FCBE8;
+	color: white;
+}
+
+.locale_dropdown_item {
+	font-size: 12px;
+}
+
+.post_form_review {
+	min-height: 96px;
+}

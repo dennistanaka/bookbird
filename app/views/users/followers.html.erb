@@ -1,0 +1,20 @@
+<div class="row top_buffer_10">
+	<div class="col-md-5">
+		<%= render 'profile_info', user: @user %>
+		<% if current_user == @user %>
+			<%= render 'posts/post_form', post: @post %>
+		<% end %>
+	</div>
+	<div class="col-md-7">
+		<%= render 'profile_nav', user: @user, tab: 'followers' %>
+		<% @rows.each do |row| %>
+			<div class="row top_buffer_15">
+				<% row.each do |user| %>
+					<div class="col-md-6">
+						<%= render 'user_card', user: user %>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

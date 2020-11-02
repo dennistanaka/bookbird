@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-5">
+    <%= render 'post_form', post: @post %>
+  </div>
+  <div class="col-md-7">
+    <%= render 'layouts/post_list', posts: @posts %>
+    <%= paginate @posts %>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bookbird</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<nav id="navigation_bar" class="navbar navbar-default navbar-static-top">
+    	<div class="container">    		
+            <div class="row">
+                <div class="col-md-12">
+
+            		<!-- Brand and toggle get grouped for better mobile display -->
+            		<div class="navbar-header">
+
+            		</div>
+
+            		<!-- Collect the nav links, forms, and other content for toggling -->
+            		<div class="collapse navbar-collapse" id="bookbird-navbar-collapse-1">
+            			<ul class="nav navbar-nav navigation_bar_image_links">
+            				<li><%= link_to image_tag("bookbird_logo_text.png", height: '48'), root_path %></li>
+            			</ul>
+            			<ul class="nav navbar-nav navbar-right">
+                            <li><%= link_to t('.home'), root_path %></li>
+                            <% if user_signed_in? %>                				
+                                <li><%= link_to t('.people'), users_path %></li>
+                                <li><%= link_to t('.profile'), user_path(current_user) %></li>
+                                <li><%= link_to current_user.email, user_path(current_user), class:"btn disabled" %></li>
+                                <li><%= link_to t('.log_out'), destroy_user_session_path, method: :delete %></li>
+                            <% else %>
+                                <li><%= link_to t('.about'), about_path %></li>
+                                <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
+                                <li><%= link_to t('.log_in'), new_user_session_path %></li>
+                            <% end %>
+                            <div class="btn-group locale_dropdown_menu">
+                                <button type="button" class="btn btn-default navbar-btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <%= image_tag("#{I18n.locale}.png", height: '16') %>
+                                    <%= Rails.configuration.bookbird_available_locales_dict[I18n.locale] %>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <% I18n.available_locales.each do |lang| %>
+                                        <li class="locale_dropdown_item">
+                                            <%= link_to url_for(locale: lang) do %>
+                                                <%= image_tag("#{lang}.png", height: '16') %>
+                                                <%= Rails.configuration.bookbird_available_locales_dict[lang] %>
+                                            <% end %>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            </div>
+            			</ul>
+            		</div>
+
+                </div>
+            </div>
+    	</div>
+    </nav>
+    <div id="bookbird_contents" class="container">
+        <%= yield %>
+    </div>
+    <div id="bookbird_footer" class="container-fluid top_buffer_15">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <i class="fa fa-copyright" aria-hidden="true"></i> <%= DateTime.now.year %> bookbird
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

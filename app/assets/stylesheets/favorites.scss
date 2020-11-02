@@ -1,0 +1,21 @@
+// Place all the styles related to the favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_unlike_button a {
+	border: 0;
+	font-size: smaller;
+	color: white;
+	background-color: #ec6899;
+}
+
+.post_unlike_button a:hover {
+	border: 0;
+	font-size: smaller;
+	color: white;
+	background-color: #FF8AB5;
+}
+
+.post_like_button a {
+	font-size: smaller;
+}
